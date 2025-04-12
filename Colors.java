@@ -41,7 +41,7 @@ public class Colors extends OpenCvPipeline {
         if (color == "red") {
             Core.inRange(hsv, new Scalar(0, 70, 50), new Scalar(8, 255, 255), mask1);
             Core.inRange(hsv, new Scalar(172, 70, 50), new Scalar(180, 255, 255), mask2);
-            Core.bitwise_or(mask1, mask2, end); // Здесь присутствует функция "bitwise_or", которая позволяет объединить сразу две маски. Зачем это здесь нужно?
+            Core.bitwise_or(mask1, mask2, end); // Здесь присутствует функция "bitwise_or", которая позволяет объединить сразу две матрицы. Зачем это здесь нужно?
             // Дело в том, что красный цвет находится как в начале столбика Hue (оттенок) в цветовой модели HSV, так и в конце. Из-за чего рекомендуется объединять эти две матрицы 
         }
         return end;
